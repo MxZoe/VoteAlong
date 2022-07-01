@@ -8,8 +8,11 @@ import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { createFirestoreInstance } from 'redux-firestore';
 import firebase from "./firebase";
 
-const store = createStore(rootReducer);
 
+
+
+const container = document.getElementById('root');
+const root = createRoot(container);
 const rrfProps = {
   firebase,
   config: {
@@ -18,9 +21,6 @@ const rrfProps = {
   dispatch: store.dispatch,
   createFirestoreInstance
 }
-
-const container = document.getElementById('root');
-const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
