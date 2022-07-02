@@ -1,10 +1,10 @@
 
 import React from 'react';
 import './App.css';
-import PrivateRoute from "./UI/Components/PrivateRoute";
-import Todos from "./UI/Routes/Todos";
+import PrivateRoute from "./UI/components/PrivateRoute";
 import SignIn from "./UI/Routes/SignIn";
-import {Switch, Route} from "react-router-dom";
+import Vote from "./features/vote/Vote"
+import {Routes, Route} from "react-router-dom";
 
 function App() {
   return (
@@ -12,14 +12,14 @@ function App() {
       textAlign: "center"
     }}>
       <h1>VoteAlong.us</h1>
-      <Switch>
+      <Routes>
         <PrivateRoute path = "/vote">
-          <Todos />
+          <Vote />
         </PrivateRoute>
         <Route path = "/">
         <SignIn />
         </Route>
-      </Switch>
+      </Routes>
       
     </div>
   );

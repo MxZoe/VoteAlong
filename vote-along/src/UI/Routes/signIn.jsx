@@ -1,6 +1,6 @@
 import React from "react";
 import { useFirebase } from "react-redux-firebase";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const firebase = useFirebase();
@@ -16,7 +16,7 @@ const SignIn = () => {
       });
   };
 
-  const history = useHistory();
+  const history = useNavigate();
   return (
     <div>
       <h1>Sign In</h1>

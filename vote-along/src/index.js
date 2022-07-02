@@ -1,26 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
-import { createStore, compose } from "redux";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
 import { createFirestoreInstance } from "redux-firestore";
 import { rootReducer } from "./ducks/reducers";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBJTFQkg95Aj-s_NsA77mco8ZVG2siLv4U",
-  authDomain: "react-redux-firebase-article.firebaseapp.com",
-  databaseURL: "https://react-redux-firebase-article.firebaseio.com",
-  projectId: "react-redux-firebase-article",
-  storageBucket: "react-redux-firebase-article.appspot.com",
-  messagingSenderId: "781345165856",
-  appId: "1:781345165856:web:45fd42a60e5bb365172245",
-  measurementId: "G-XFR3YXLCGW",
+  apiKey: "AIzaSyAL_v1tyhcCFm1vizv6ppTKhCL8czXzKys",
+  authDomain: "votealong-f2129.firebaseapp.com",
+  projectId: "votealong-f2129",
+  storageBucket: "votealong-f2129.appspot.com",
+  messagingSenderId: "143524952912",
+  appId: "1:143524952912:web:6d6755a8223505852f0a55"
 };
 
 const rrfConfig = {
@@ -44,9 +42,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ReactReduxFirebaseProvider {...rrfProps}>
-        <BrowserRouter>
+        <HashRouter>
           <App />
-        </BrowserRouter>
+        </HashRouter>
       </ReactReduxFirebaseProvider>
     </Provider>
   </React.StrictMode>,
