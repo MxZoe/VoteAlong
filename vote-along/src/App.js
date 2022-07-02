@@ -1,56 +1,26 @@
+
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
+import PrivateRoute from "./UI/Components/PrivateRoute";
+import Todos from "./UI/Routes/Todos";
+import SignIn from "./UI/Routes/SignIn";
+import {Switch, Route} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div style = {{
+      textAlign: "center"
+    }}>
+      <h1>VoteAlong.us</h1>
+      <Switch>
+        <PrivateRoute path = "/vote">
+          <Todos />
+        </PrivateRoute>
+        <Route path = "/">
+        <SignIn />
+        </Route>
+      </Switch>
+      
     </div>
   );
 }
